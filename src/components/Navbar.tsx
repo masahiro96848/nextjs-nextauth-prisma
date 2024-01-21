@@ -7,7 +7,7 @@ import UserAccountNav from './UserAccountNav'
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
-  console.log(session)
+  // console.log(session)
 
   return (
     <div className=" bg-zinc-100 py-2 border-b border-s-zinc-200 fixed w-full z-10 top-0">

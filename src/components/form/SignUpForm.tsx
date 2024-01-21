@@ -17,6 +17,7 @@ import Link from 'next/link'
 import GoogleSignInButton from '../GoogleSignInButton'
 import { useRouter } from 'next/navigation'
 import { useToast } from '@/components/ui/use-toast'
+import { signIn } from 'next-auth/react'
 
 const FormSchema = z
   .object({
@@ -58,7 +59,13 @@ const SignUpForm = () => {
     })
 
     if (response.ok) {
-      router.push('/sign-in')
+      await signIn('credentials', {
+        email: values.email,
+        password: values.password,
+        redirect: false,
+      })
+      router.push('/admin')
+      router.refresh()
     } else {
       toast({
         title: 'Error',
