@@ -6,7 +6,7 @@ Youtube <br>
 - Next.js(app router)
 - NextAuth
 - Prisma
-- Vercel
+- Supabase
 
 
 
